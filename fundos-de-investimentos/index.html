@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <title>Renda Fixa, Variável e Fundos de Investimento | Eterna Capital</title>
+    
+    <meta name="description" content="Explore as melhores opções em Renda Fixa, Fundos de Investimento e Renda Variável com a assessoria exclusiva da Eterna Capital.">
+
+    <meta property="og:title" content="Renda Fixa, Variável e Fundos de Investimento | Eterna Capital">
+    <meta property="og:description" content="Explore as melhores opções em Renda Fixa, Fundos de Investimento e Renda Variável com a assessoria exclusiva da Eterna Capital.">
+    <meta property="og:image" content="https://www.seusite.com.br/imagem-social-investimentos.png"> 
+    <meta property="og:url" content="https://www.seusite.com.br/investimentos.html">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+    /* Estilos essenciais herdados da Home */
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #F7F4ED;
+    }
+    .tradingview-widget-container-wrapper {
+        position: fixed; top: 80px; width: 100%; z-index: 49; background-color: black;
+        height: 27px; overflow: hidden; position: relative;
+    }
+    .tradingview-widget-container-wrapper::after {
+        content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 100%;
+        background-color: black; z-index: 2; pointer-events: none;
+    }
+    .tradingview-ticker-tape-clipper {
+        transform: scale(0.70); transform-origin: top left; width: 220%;
+    }
+    .tradingview-widget-copyright { display: none !important; }
+    .sr-only {
+        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+        overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+    }
+    .disclaimer-text {
+        max-height: 500px; overflow: hidden; transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out;
+    }
+    @media (max-width: 767px) {
+        .disclaimer-text { max-height: 0; }
+        .disclaimer-text.is-open { max-height: 500px; margin-top: 1rem; }
+        #disclaimer-arrow.is-open { transform: rotate(180deg); }
+    }
+    #mobile-menu {
+        max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out;
+    }
+    #mobile-menu.is-open { max-height: 500px; }
+
+    /* Estilo para o design moderno das abas */
+    .tab-button {
+        color: rgba(255, 255, 255, 0.7);
+        border-bottom: 3px solid transparent;
+        margin-bottom: -2px;
+    }
+    .tab-button:hover {
+        color: white;
+    }
+    .active-tab-modern {
+        color: #c5a365 !important;
+        border-bottom-color: #c5a365;
+    }
+
+    /* Estilo .split-image-panel removido, pois não é mais necessário */
+
+    .icon-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background-color: #08332a;
+        border-radius: 50%;
+        border: 2px solid #c5a365;
+        transition: transform 0.3s ease-in-out;
+    }
+    .icon-container:hover {
+        transform: scale(1.1);
+    }
+
+    /* Estilos para o Carrossel Swiper */
+    @media (min-width: 768px) {
+        .info-carousel .swiper-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            transform: none !important;
+        }
+        .info-carousel .swiper-slide {
+            width: auto !important;
+            margin-right: 0 !important;
+        }
+        .info-carousel .swiper-pagination {
+            display: none;
+        }
+    }
+    @media (min-width: 1024px) {
+        .info-carousel .swiper-wrapper {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #c5a365 !important;
+    }
+    .info-carousel .swiper-slide h3 {
+        text-align: center;
+    }
+
+    /* Animações */
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .animation-delay-200 { animation-delay: 200ms; }
+    .animation-delay-400 { animation-delay: 400ms; }
+</style>
+</head>
+
+<body class="bg-[#F7F4ED]">
+
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 shadow-lg" style="background-color: rgba(1, 26, 22, 0.9); backdrop-filter: blur(8px);">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="/" aria-label="Página Inicial"><img class="h-10 w-auto" src="/logo.png" alt="Logo Eterna Capital XP"></a>
+                </div>
+                <nav class="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 items-center space-x-6">
+                    <a href="/quem-somos/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Quem somos</a>
+                    <a href="/equipe/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Equipe</a>
+                    <a href="/fundos-de-investimentos/" class="text-sm font-medium text-[#c5a365] transition-colors duration-300">Investimentos</a>
+                    <a href="#" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Soluções PJ</a>
+                    <a href="/seguros/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Seguros</a>
+                    <a href="#" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Private</a>
+                    <a href="/assessoria/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Assessoria</a>
+                    <a href="/contato/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Contato</a>
+                </nav>
+                <div class="flex items-center">
+                    <div class="hidden md:block">
+                        <a href="#" class="text-sm font-medium text-white border border-[#c5a365] rounded-md px-4 py-2 hover:bg-[#c5a365] hover:text-[#08332a] transition-colors duration-300">Abra sua conta</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" type="button" class="ml-4 inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="sr-only">Abrir menu principal</span>
+                            <svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                            <svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/quem-somos/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Quem somos</a>
+                <a href="/equipe/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Equipe</a>
+                <a href="/fundos-de-investimentos/" class="block px-3 py-2 rounded-md text-base font-medium text-[#c5a365] hover:bg-white/10">Investimentos</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Soluções PJ</a>
+                <a href="/seguros/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Seguros</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Private</a>
+                <a href="/assessoria/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Assessoria</a>
+                <a href="/contato/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Contato</a>
+            </div>
+            <div class="border-t border-gray-700 px-5 py-4">
+                <a href="#" class="block text-center w-full px-3 py-2 rounded-md text-base font-medium text-white border border-[#c5a365] hover:bg-[#c5a365] hover:text-[#08332a] transition-colors duration-300">Abra sua conta</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="tradingview-widget-container-wrapper">
+        <div class="tradingview-ticker-tape-clipper">
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    { "symbols": [{"proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index"}, {"proName": "BMFBOVESPA:DOL1!", "title": "DOL1!"}, {"proName": "OKX:BTCBRL", "title": "Bitcoin"}, {"proName": "BMFBOVESPA:SMAL11", "title": "smal11"}, {"proName": "BMFBOVESPA:IFIX", "title": "IFIX"}, {"proName": "BMFBOVESPA:PETR4", "title": "PETR4"}], "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": true, "displayMode": "regular", "locale": "br" }
+                </script>
+            </div>
+        </div>
+    </div>
+    
+    <main class="pt-[90px]">
+
+    <section class="relative bg-cover bg-center text-white animate-fade-in-up" style="background-image: url('titulo.png');">
+        <div class="absolute inset-0 bg-gray-900 bg-opacity-70"></div>
+        <div class="relative container mx-auto px-6 py-12 md:py-16 flex flex-col items-center z-10">
+            <div class="text-center">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">Investimentos</h1>
+                <div class="w-24 h-px bg-white/50 mx-auto my-4"></div>
+                <p class="mt-2 text-base md:text-lg text-[#c5a365]">Investimentos para todos os tipos de perfis</p>
+            </div>
+            <div id="tab-navigation" class="mt-10 w-full max-w-lg">
+                <div class="flex justify-center border-b border-white/20">
+                    <button data-tab="content-renda-fixa" class="tab-button flex-1 py-3 px-2 text-center font-semibold text-sm md:text-base transition-all duration-300">Renda Fixa</button>
+                    <button data-tab="content-fundos" class="tab-button flex-1 py-3 px-2 text-center font-semibold text-sm md:text-base transition-all duration-300">Fundos de Investimentos</button>
+                    <button data-tab="content-renda-variavel" class="tab-button flex-1 py-3 px-2 text-center font-semibold text-sm md:text-base transition-all duration-300">Renda Variável</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 animate-fade-in-up animation-delay-200">
+        <div class="container mx-auto px-6 lg:px-8">
+
+            <div id="content-renda-fixa" class="tab-content hidden">
+                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-content">
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#08332a] mb-6 leading-tight text-center">Investimentos em Renda Fixa: Segurança e Rentabilidade</h2>
+                        <div class="space-y-4 text-gray-700 leading-relaxed">
+                            <p class="font-semibold text-[#c5a365]">A Eterna Capital faz uma seleção com as melhores opções em renda fixa para você garantir a melhor relação Rentabilidade X Segurança.</p>
+                            <p>Renda Fixa é um tipo de investimento onde as pessoas conhecem ou podem prever a rentabilidade, antes mesmo de realizar a operação. Para investir em Renda Fixa não existe mistério, muito pelo contrário, é bastante simples.</p>
+                            <p>E o investidor ainda conta com a segurança do Fundo Garantidor de Crédito (FGC) – o mesmo seguro da Poupança.</p>
+                        </div>
+                    </div>
+                    <div class="image-content h-80 md:h-96 rounded-2xl overflow-hidden">
+                        <img src="rendafixa.png" alt="Assessoria de investimentos para Renda Fixa" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-fundos" class="tab-content">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-content">
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#08332a] mb-6 leading-tight text-center">Fundos de Investimento: Diversifique sua Carteira</h2>
+                        <div class="space-y-4 text-gray-700 leading-relaxed">
+                            <p class="font-semibold text-[#c5a365]">Fundos de investimento são muito interessantes por já serem uma forma de diversificação. Ao "comprar" um fundo você está se expondo a diversas opções de investimento em um só lugar.</p>
+                            <p>Quanto mais diversificado o fundo, menor é o risco. Essa aplicação financeira traz os recursos de um conjunto de investidores (cotistas), permitindo assim investir em diferentes mercados e em uma variada cesta de ativos.</p>
+                            <p>Títulos de Renda Fixa, Títulos Públicos, Títulos Cambiais, Derivativos, Commodities, Ações e muitos outros podem ser englobados nessa carteira.</p>
+                        </div>
+                    </div>
+                    <div class="image-wrapper lg:px-24"> 
+                        <div class="image-content h-80 md:h-96 rounded-2xl overflow-hidden">
+                            <img src="fundo.png" alt="Diversificação de carteira com Fundos de Investimento" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-renda-variavel" class="tab-content hidden">
+                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-content">
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#08332a] mb-6 leading-tight text-center">Renda Variável: Potencialize seus Ganhos na Bolsa</h2>
+                        <div class="space-y-4 text-gray-700 leading-relaxed">
+                            <p class="font-semibold text-[#c5a365]">Para quem tolera um pouco mais de risco e oscilações o mercado de ações pode ser muito atrativo e extremamente rentável.</p>
+                            <p>Montar uma boa carteira de Ações, Fundos, ETFs e BDR’s pode lhe proporcionar alta rentabilidade e/ou dividendos e/ou ambos. Ao conversar com nosso time e identificar seu perfil e objetivos, vamos lhe ajudar a montar uma carteira ideal pra você. Conheça mais sobre as nomenclaturas e possibilidades abaixo e converse com nossos assessores.</p>
+                            <p class="font-semibold text-[#08332a]">A Eterna Capital foi premiada com o selo Tier 1 25+, o prêmio reconhece a capacidade do escritório em trabalhar junto a XP para trazer as melhores soluções em classes de ativos de Renda Variável.</p>
+                        </div>
+                    </div>
+                    <div class="image-content h-80 md:h-96 rounded-2xl overflow-hidden">
+                        <img src="variavel.png" alt="Gráfico de ações representando investimentos em Renda Variável" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="additional-info-container" class="py-16 md:py-24 bg-[#F7F4ED] animate-fade-in-up animation-delay-400">
+        <div class="container mx-auto px-6 lg:px-8">
+    
+            <div id="info-renda-variavel" class="additional-info-content">
+                <div class="w-full mb-12 border-t-2 border-gray-200"></div>
+                <div class="swiper info-carousel md:overflow-visible">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 1.5m1-1.5l1 1.5m0 0l.5 1.5m.5-1.5h-1.5m0 0l1.5-2.25m-1.5 2.25L12 18m0 0l-1.5-2.25m1.5 2.25V5.25A2.25 2.25 0 009.75 3H3.75Z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Ações</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Um pedaço de uma empresa, uma fração de seu capital que é negociada no mercado. Um investimento no qual a rentabilidade não é preestabelecida, mas vai depender das cotações nos mercados. BDR (Brazilian Depositary Receipts) Certificados de depósito, emitidos e negociados no Brasil, com lastro em valores mobiliários de emissão de companhias estrangeiras.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 11.21 12.77 11 12 11s-1.536.21-2.121.718c-1.172.879-1.172 2.303 0 3.182zM12 6a2.47 2.47 0 110-4.938 2.47 2.47 0 010 4.938zM12 18a2.47 2.47 0 100 4.938 2.47 2.47 0 000-4.938z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Aluguel (BTC - Banco de Títulos CBLC)</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">O empréstimo de Ações consiste em emprestar ativos (aluguel na ponta doadora) a uma taxa prefixada (fixada no fechamento da operação, considerando o valor pro rata) para um determinado vencimento.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962c.512-.396 1.08-.743 1.68-.992a4.5 4.5 0 015.056 0c.6.25 1.168.596 1.68.992m-2.252-4.612a4.5 4.5 0 00-6.426 0M12 18.75h.008v.008H12v-.008z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Clube de Investimento</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Uma forma de investimento coletivo de pessoas físicas no Mercado de Capitais.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Oferta Pública</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Também conhecida como IPO, ocorre quando uma empresa decide fazer a abertura de seu capital por diversos motivos, como captar recursos financeiros para financiar novos investimentos da companhia.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A2.25 2.25 0 011.5 18.75v-2.625c0-.621.504-1.125 1.125-1.125h2.25Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75a2.25 2.25 0 012.25 2.25v6.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125v-6.75A2.25 2.25 0 0116.5 3.75z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 9.75a2.25 2.25 0 012.25 2.25v6.75c0 .621-.504 1.125-1.125 1.125h-2.25A2.25 2.25 0 017.5 18v-6.75a2.25 2.25 0 012.25-2.25z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Opções</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">O comprador adquire o direito de comprar (opção de compra ou call) ou de vender (opção de venda ou put) uma quantidade específica de um determinado bem ou instrumento financeiro a um preço fixado (preço de exercício), numa data determinada, pagando, por isso, um dado preço (prêmio).</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Termos</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Como comprador ou vendedor do contrato a termo, você se compromete a comprar ou vender certa quantidade de um bem (mercadoria ou ativo financeiro) por um preço fixado ainda na data de realização do negócio.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination mt-8 relative bottom-0"></div>
+                </div>
+            </div>
+    
+            <div id="info-renda-fixa" class="additional-info-content hidden">
+                <div class="w-full mb-12 border-t-2 border-gray-200"></div>
+                <div class="swiper info-carousel md:overflow-visible">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414-.336.75-.75.75h-.75m0-1.5S2.25 4.5 20.25 6m0 9s0 3-2.25 3h-15A2.25 2.25 0 013 15m0-9v.75" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">CDB (Certificado de Depósito Bancário)</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Instrumento de captação dos bancos, com objetivo de financiar suas atividades. Você empresta dinheiro aos bancos em troca de uma rentabilidade (juros).</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 11.21 12.77 11 12 11s-1.536.21-2.121.718c-1.172.879-1.172 2.303 0 3.182zM12 6a2.47 2.47 0 110-4.938 2.47 2.47 0 010 4.938z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">CRA (Certificado de Recebíveis do Agronegócio)</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Os títulos do agronegócio têm como objetivo viabilizar o financiamento do setor com recursos privados.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">CRI (Certificado de Recebíveis Imobiliários)</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Título lastreado em ativos imobiliários de naturezas distintas, como CCI (Cédulas de Crédito Imobiliário), carteira de recebíveis, etc. Só pode ser emitido por companhias securitizadoras, responsáveis por estruturar os créditos imobiliários e transformá-los em CRIs.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Debêntures</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Títulos de crédito emitidos por empresas de vários ramos, com o objetivo de financiar investimentos, "rolar" dívidas, fornecer capital de giro, entre outros.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 11.21 12.77 11 12 11s-1.536.21-2.121.718c-1.172.879-1.172 2.303 0 3.182zM12 6a2.47 2.47 0 110-4.938 2.47 2.47 0 010 4.938z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">DPGE (Depósito a prazo com garantia especial do FGC)</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">É um título de Renda Fixa de depósito a prazo criado para auxiliar instituições financeiras (ex.: bancos) a captar recursos.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414-.336.75-.75.75h-.75m0-1.5S2.25 4.5 20.25 6m0 9s0 3-2.25 3h-15A2.25 2.25 0 013 15m0-9v.75" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">FIDC (Fundo de Investimento em Direitos Creditórios)</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Fundo de investimento que destina parcela preponderante de seu patrimônio líquido para aplicação em direitos e títulos representativos de créditos (“direitos creditórios”) provenientes de operações comerciais, industriais, imobiliárias, financeiras ou de prestação de serviços, entre outras.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414-.336.75-.75.75h-.75m0-1.5S2.25 4.5 20.25 6m0 9s0 3-2.25 3h-15A2.25 2.25 0 013 15m0-9v.75" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">LC (Letra de Crédito - Letra de Câmbio)</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Instrumento de captação das financeiras, com o objetivo de financiar suas atividades. Você empresta dinheiro às financeiras em troca de uma rentabilidade preestabelecida.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 11.21 12.77 11 12 11s-1.536.21-2.121.718c-1.172.879-1.172 2.303 0 3.182zM12 6a2.47 2.47 0 110-4.938 2.47 2.47 0 010 4.938z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">LCA (Letra de Crédito do Agronegócio)</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Título emitido por instituições financeiras, públicas e privadas, vinculado a direitos creditórios originários do agronegócio.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">LCI (Letra de Crédito Imobiliário)</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Instrumento de captação que pode ser emitido por instituições autorizadas pelo Banco Central, com objetivo de financiar o setor imobiliário. Os créditos imobiliários são geralmente garantidos por hipoteca ou alienação fiduciária do imóvel.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 11.21 12.77 11 12 11s-1.536.21-2.121.718c-1.172.879-1.172 2.303 0 3.182zM12 6a2.47 2.47 0 110-4.938 2.47 2.47 0 010 4.938z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Letra Financeira</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Instrumento de captação de recursos exclusivo das instituições financeiras.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414-.336.75-.75.75h-.75m0-1.5S2.25 4.5 20.25 6m0 9s0 3-2.25 3h-15A2.25 2.25 0 013 15m0-9v.75" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Tesouro Direto</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Programa que possibilita a negociação, através da internet, de títulos públicos por pessoas físicas.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Títulos Públicos Federais</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Títulos emitidos pelo Governo, por meio do Tesouro Nacional, com a finalidade de captar recursos para o financiamento da atividade pública. Em função disso, são vistos pelo mercado como de baixo risco.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination mt-8 relative bottom-0"></div>
+                </div>
+            </div>
+    
+            <div id="info-fundos" class="additional-info-content hidden">
+                <div class="w-full mb-12 border-t-2 border-gray-200"></div>
+                <div class="swiper info-carousel md:overflow-visible">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 11.21 12.77 11 12 11s-1.536.21-2.121.718c-1.172.879-1.172 2.303 0 3.182zM12 6a2.47 2.47 0 110-4.938 2.47 2.47 0 010 4.938z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Curto Prazo</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Fundo de investimento exclusivo em títulos públicos federais prefixados ou privados de baixo risco, que visam acompanhar as taxas de juros.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Referenciados</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Nele, os ativos devem seguir a variação do benchmark, instrumento usado para comparar a rentabilidade entre investimentos diversos. São seguros por possuírem um piso de 80% como os fundos de curto prazo.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 1.5m1-1.5l1 1.5m0 0l.5 1.5m.5-1.5h-1.5m0 0l1.5-2.25m-1.5 2.25L12 18m0 0l-1.5-2.25m1.5 2.25V5.25A2.25 2.25 0 009.75 3H3.75Z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Renda Fixa</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Investe-se, pelo menos, 80% dos recursos deste fundo em ativos de renda fixa prefixados ou pós-fixados. Não acompanham taxas de juros, necessarily.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639l7.5-10.5a1.012 1.012 0 011.634 0l7.5 10.5a1.012 1.012 0 010 .639l-7.5 10.5a1.012 1.012 0 01-1.634 0l-7.5-10.5z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Multimercados</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Os recursos do fundo são alocados em diversas formas de ativos (renda fixa, câmbio, ações e derivado). Indicado para investimento de longo prazo, pelo fato de seu risco ser mais elevado e, consequentemente, sua rentabilidade.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.801 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.801 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12z" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Ações</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Neste fundo, no mínimo 67% dos recursos são alocados em ações negociadas na Bolsa de Valores.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                            <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Cambiais</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Pelo menos 80% dos recursos são alocados, direta ou indiretamente, ao câmbio de moedas estrangeiras ou à mudança na taxa de juros.</p>
+                        </div>
+                        <div class="swiper-slide h-auto flex flex-col items-center">
+                             <div class="icon-container">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-[#c5a365]"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414-.336.75-.75.75h-.75m0-1.5S2.25 4.5 20.25 6m0 9s0 3-2.25 3h-15A2.25 2.25 0 013 15m0-9v.75" /></svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#08332a] mt-4 mb-2 text-center">Dívida Externa</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">Fundo que investe no mínimo 80% do seu patrimônio em títulos representativos da dívida externa de responsabilidade da União.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination mt-8 relative bottom-0"></div>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+</main>
+
+    <footer style="background-color: #08332a;" class="text-white">
+        <div class="container mx-auto px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="flex items-center space-x-4">
+                        <img src="/logo.png" alt="Logo Eterna Capital" class="h-12" loading="lazy">
+                    </div>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://br.linkedin.com/company/eternacapitaloficial" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#c5a365] transition-colors" aria-label="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
+                        </a>
+                        <a href="https://www.facebook.com/eternacapitaloficial" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#c5a365] transition-colors" aria-label="Facebook">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+                        </a>
+                        <a href="https://www.instagram.com/eternacapitaloficial" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#c5a365] transition-colors" aria-label="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.459.717-2.126 1.384S.935 3.356.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.784.718 1.459 1.384 2.126.667.666 1.342 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.784-.305 1.459-.718 2.126-1.384.666-.667 1.079-1.342 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.305-.784-.718-1.459-1.384-2.126C21.319 1.342 20.644.93 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.056 1.17-.249 1.805-.413 2.227-.217.562-.477.96-.896 1.381-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.585-.015-4.85-.074c-1.17-.056-1.805-.249-2.227-.413-.562-.217-.96-.477-1.381-.896-.419-.42-.679-.819-.896-1.381-.165-.423-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.015-3.585.07-4.85c.055-1.17.248-1.805.413-2.227.217-.562.477.96.896-1.381.42-.42.82-.679 1.381-.896.423-.165 1.057-.36 2.227-.413 1.266-.057 1.646-.07 4.85-.07zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zM12 16c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@eternacapital" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#c5a365] transition-colors" aria-label="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+                        </a>
+                        <a href="https://open.spotify.com/show/73ONwoNrQtzGhzx8NIKts5?si=093f0701aa2e4212" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#c5a365] transition-colors" aria-label="Spotify">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.823 16.949c-.225.352-.675.465-1.028.24-2.61-1.624-5.865-1.98-9.842-1.087-.435.1-.862-.15-.962-.585-.1-.435.15-.862.585-.962 4.335-.99 7.89-0.585 10.74 1.14.352.225.465.675.24 1.028zm1.32-3.134c-.277.435-.84.577-1.29.3-3.15-1.95-7.92-2.4-11.4-1.32-.487.15-.99-.12-1.14-.607-.15-.488.12-.99.608-1.14 3.84-1.17 8.94-.66 12.45 1.5.435.277.577.84.3 1.29-.015.015-.015.015 0 .012zm.12-3.264C15.3 8.54 9.84 8.34 6.75 9.345c-.525.165-1.05-.15-1.215-.675-.165-.525.15-1.05.675-1.215 3.45-1.08 9.525-.87 13.05 1.29.51.315.69.93.375 1.44-.315.51-.93.69-1.44.375z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-bold tracking-wider uppercase" style="color: #c5a365;">Onde Estamos</h3>
+                    <div class="mt-4 space-y-2 text-gray-300">
+                        <p>Alameda Terracota, 185</p>
+                        <p>Conjunto. 1.112, 1.113 e 1.114</p>
+                        <p>Cerâmica – São Caetano do Sul/SP</p>
+                        <p>CEP 09531-190</p>
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-bold tracking-wider uppercase" style="color: #c5a365;">Fale Conosco</h3>
+                    <div class="mt-4 space-y-2 text-gray-300">
+                        <p>Tel: (11) 4118-9000</p>
+                        <p>E-mail: <a href="mailto:contato@eternacapital.com.br" class="hover:text-[#c5a365] transition-colors">contato@eternacapital.com.br</a></p>
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+    <h3 class="text-lg font-bold tracking-wider uppercase" style="color: #c5a365;">Links</h3>
+    <div class="mt-4 space-y-2 text-gray-300 flex flex-col items-center md:items-start">
+        <a href="/links/#portal-privacidade" class="hover:text-[#c5a365] transition-colors">Portal de Privacidade</a>
+        <a href="/links/#politica-cookies" class="hover:text-[#c5a365] transition-colors">Política de Cookies</a>
+        <a href="/links/#politica-dados" class="hover:text-[#c5a365] transition-colors">Política de Privacidade e Proteção de Dados Pessoais</a>
+    </div>
+</div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700 text-xs text-gray-400 text-justify">
+                <div id="disclaimer-content" class="disclaimer-text">
+                    <p>A ETERNA CAPITAL ASSESSOR DE INVESTIMENTOS LTDA, inscrita sob o CNPJ: 28.529.362/0001-93 é uma empresa de Assessoria de Investimento devidamente registrada na Comissão de Valores Mobiliários na forma da Resolução CVM 178/23 (“Sociedade”), que mantém contrato de distribuição de produtos financeiros com a XP Investimentos Corretora de Câmbio, Títulos e Valores Mobiliários S.A. (“XP”) e pode, por conta e ordem dos seus clientes, operar no mercado de capitais segundo a legislação vigente. Na forma da legislação da CVM, o Assessor de Investimento não pode administrar ou gerir o patrimônio de investidores. O investimento em ações é um investimento de risco e rentabilidade passada não é garantia de rentabilidade futura. Na realização de operações com derivativos existe a possibilidade de perdas superiores aos valores investidos, podendo resultar em significativas perdas patrimoniais A Sociedade poderá exercer atividades complementares relacionadas aos mercados financeiro, securitário, de previdência e capitalização, desde que não conflitem com a atividade de assessoria de investimentos, podendo ser realizada por meio da pessoa jurídica acima descrita ou por meio de pessoa jurídica terceira. Todas as atividades são prestadas mantendo a devida segregação e em cumprimento ao quanto previsto nas regras da CVM ou de outros órgãos reguladores e autorreguladores. Para informações e dúvidas sobre produtos, contate seu assessor de investimentos. Para reclamações, contate a Ouvidoria da XP pelo telefone 0800 722 3730.</p>
+                </div>
+                <button id="toggle-disclaimer" class="md:hidden w-full text-left font-semibold text-[#c5a365] mt-4 py-2 flex justify-between items-center">
+                    <span>Aviso Legal Completo</span>
+                    <svg id="disclaimer-arrow" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- LÓGICA DAS ABAS DE INVESTIMENTOS ---
+        const tabs = document.querySelectorAll('.tab-button');
+        const mainContents = document.querySelectorAll('.tab-content');
+        const additionalInfos = document.querySelectorAll('.additional-info-content');
+        const additionalInfoMap = {
+            'content-renda-fixa': 'info-renda-fixa',
+            'content-fundos': 'info-fundos',
+            'content-renda-variavel': 'info-renda-variavel'
+        };
+        function switchTab(activeTab) {
+            if (!activeTab) return;
+            tabs.forEach(tab => tab.classList.remove('active-tab-modern'));
+            activeTab.classList.add('active-tab-modern');
+            mainContents.forEach(content => content.classList.add('hidden'));
+            additionalInfos.forEach(info => info.classList.add('hidden'));
+            const mainTargetId = activeTab.getAttribute('data-tab');
+            const mainTargetContent = document.getElementById(mainTargetId);
+            if (mainTargetContent) {
+                mainTargetContent.classList.remove('hidden');
+            }
+            const additionalTargetId = additionalInfoMap[mainTargetId];
+            const additionalTargetContent = document.getElementById(additionalTargetId);
+            if (additionalTargetContent) {
+                additionalTargetContent.classList.remove('hidden');
+            }
+        }
+        const initialActiveTab = document.querySelector('[data-tab="content-renda-variavel"]');
+        switchTab(initialActiveTab);
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                switchTab(tab);
+            });
+        });
+    });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- LÓGICA DO CARROSSEL (SWIPER) ---
+            function setupSwiper() {
+                document.querySelectorAll('.info-carousel').forEach(carouselElement => {
+                    if (carouselElement.swiper) {
+                        if (window.innerWidth < 768) {
+                            carouselElement.swiper.enable();
+                        } else {
+                            carouselElement.swiper.disable();
+                        }
+                        return;
+                    }
+                    const swiper = new Swiper(carouselElement, {
+                        enabled: window.innerWidth < 768,
+                        slidesPerView: 1,
+                        spaceBetween: 30,
+                        loop: true,
+                        autoplay: {
+                          delay: 3000,
+                          disableOnInteraction: false,
+                        },
+                        pagination: {
+                            el: carouselElement.querySelector('.swiper-pagination'),
+                            clickable: true,
+                        }
+                    });
+                });
+            }
+            setupSwiper();
+            window.addEventListener('resize', setupSwiper);
+        });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- LÓGICA PARA O MENU MOBILE (HAMBURGER) ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('is-open');
+                menuIconOpen.classList.toggle('hidden');
+                menuIconClose.classList.toggle('hidden');
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            });
+
+            // --- LÓGICA PARA O DISCLAIMER (AVISO LEGAL) NO RODAPÉ ---
+            const disclaimerButton = document.getElementById('toggle-disclaimer');
+            const disclaimerContent = document.querySelector('.disclaimer-text');
+            const disclaimerArrow = document.getElementById('disclaimer-arrow');
+
+            if(disclaimerButton) {
+                disclaimerButton.addEventListener('click', function() {
+                    disclaimerContent.classList.toggle('is-open');
+                    disclaimerArrow.classList.toggle('is-open');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

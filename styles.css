@@ -1,0 +1,206 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F7F4ED;
+}
+
+.tradingview-widget-container-wrapper {
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    z-index: 49;
+    background-color: #08332a;
+    height: 27px; /* <-- Altura para o mobile */
+    overflow: hidden;
+    position: relative;
+}
+
+.tradingview-widget-container-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background-color: #08332a;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.tradingview-ticker-tape-clipper {
+    transform: scale(0.70);
+    transform-origin: top left;
+    width: 220%;
+}
+
+.tradingview-widget-copyright {
+    display: none !important;
+}
+
+#hero-section {
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    will-change: opacity, transform;
+    height: 37vh;
+}
+
+@media (max-width: 767px) {
+    #hero-section {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+    }
+}
+
+#hero-section.is-loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.video-hidden {
+    opacity: 0;
+}
+
+.scroll-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stat-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+#stats-container.is-visible .stat-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.call-to-action-overlay {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 20;
+    opacity: 0;
+    transform: translateY(20px) translateX(-50%);
+    transition: opacity 0.5s ease-out 0.8s, transform 0.5s ease-out 0.8s;
+}
+
+#hero-section.is-loaded .call-to-action-overlay {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+}
+
+.call-to-action-overlay a {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    color: #fff;
+}
+
+.call-to-action-overlay a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 767px) {
+    .call-to-action-overlay {
+        bottom: 20px;
+        width: auto;
+    }
+    .call-to-action-overlay a {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+.swiper-pagination-bullet {
+    background-color: #c5a365;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Disclaimer Styles */
+.disclaimer-text {
+    max-height: 500px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out;
+}
+
+@media (max-width: 767px) {
+    .disclaimer-text {
+        max-height: 0;
+    }
+    .disclaimer-text.is-open {
+        max-height: 500px; /* Ajustar se o texto for maior */
+        margin-top: 1rem;
+    }
+    #disclaimer-arrow.is-open {
+        transform: rotate(180deg);
+    }
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+#mobile-menu.is-open {
+    max-height: 500px; /* Adjust if menu content is taller */
+}
+
+/* Pop-up de Fim de Página (CTA) */
+#end-of-page-popup.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#end-of-page-popup.is-visible .popup-content {
+    transform: scale(1);
+}
+
+.popup-content {
+    background-size: cover;
+    background-position: center;
+}

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas e Privacidade | Eterna Capital</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="description" content="Acesse o portal de privacidade, política de cookies e outros documentos importantes da Eterna Capital.">
+    <meta name="robots" content="noindex, follow">
+
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F7F4ED;
+        }
+        .tradingview-widget-container-wrapper {
+            position: fixed; top: 80px; width: 100%; z-index: 49; background-color: black;
+            height: 27px; overflow: hidden; position: relative;
+        }
+        .tradingview-widget-container-wrapper::after {
+            content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 100%;
+            background-color: black; z-index: 2; pointer-events: none;
+        }
+        .tradingview-ticker-tape-clipper {
+            transform: scale(0.70); transform-origin: top left; width: 220%;
+        }
+        .tradingview-widget-copyright { display: none !important; }
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;
+        }
+        .disclaimer-text {
+            max-height: 500px; overflow: hidden;
+            transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out;
+        }
+        @media (max-width: 767px) {
+            .disclaimer-text { max-height: 0; }
+            .disclaimer-text.is-open { max-height: 500px; margin-top: 1rem; }
+            #disclaimer-arrow.is-open { transform: rotate(180deg); }
+        }
+        #mobile-menu {
+            max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out;
+        }
+        #mobile-menu.is-open { max-height: 500px; }
+        .prose {
+            --tw-prose-body: #4a5568; --tw-prose-headings: #08332a; --tw-prose-links: #c5a365;
+            --tw-prose-bold: #1a202c; --tw-prose-bullets: #c5a365;
+        }
+        .prose h2 {
+            margin-bottom: 1.5em; /* Ajuste para garantir espaço após o título da seção */
+        }
+        .collapsible-content {
+            transition: max-height 0.7s ease-in-out;
+            overflow: hidden;
+        }
+        .collapsible-content.is-collapsed {
+            max-height: 28rem;
+            position: relative;
+        }
+        .collapsible-content.is-collapsed::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10rem;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F7F4ED]">
+
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 shadow-lg" style="background-color: rgba(1, 26, 22, 0.9); backdrop-filter: blur(8px);">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="relative flex items-center justify-between h-20">
+            <div class="flex-shrink-0"><a href="/" aria-label="Página Inicial"><img class="h-10 w-auto" src="/logo.png" alt="Logo Eterna Capital XP"></a></div><nav class="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 items-center space-x-6"><a href="/quem-somos/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Quem somos</a><a href="/equipe/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Equipe</a><a href="/fundos-de-investimentos/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Investimentos</a><a href="#" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Soluções PJ</a><a href="/seguros/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Seguros</a><a href="#" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Private</a><a href="/assessoria/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Assessoria</a><a href="/contato/" class="text-sm font-medium text-white hover:text-[#c5a365] transition-colors duration-300">Contato</a></nav><div class="flex items-center"><div class="hidden md:block"><a href="#" class="text-sm font-medium text-white border border-[#c5a365] rounded-md px-4 py-2 hover:bg-[#c5a365] hover:text-[#08332a] transition-colors duration-300">Abra sua conta</a></div><div class="md:hidden"><button id="mobile-menu-button" type="button" class="ml-4 inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false"><span class="sr-only">Abrir menu principal</span><svg id="menu-icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg><svg id="menu-icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div></div></div></div><div id="mobile-menu" class="md:hidden"><div class="px-2 pt-2 pb-3 space-y-1 sm:px-3"><a href="/quem-somos/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Quem somos</a><a href="/equipe/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Equipe</a><a href="/fundos-de-investimentos/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Investimentos</a><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Soluções PJ</a><a href="/seguros/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Seguros</a><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Private</a><a href="/assessoria/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Assessoria</a><a href="/contato/" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-[#c5a365] hover:bg-white/10">Contato</a></div><div class="border-t border-gray-700 px-5 py-4"><a href="#" class="block text-center w-full px-3 py-2 rounded-md text-base font-medium text-white border border-[#c5a365] hover:bg-[#c5a365] hover:text-[#08332a] transition-colors duration-300">Abra sua conta</a></div></div>
+    </header>
+
+    <div class="tradingview-widget-container-wrapper">
+        <div class="tradingview-ticker-tape-clipper"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>{"symbols": [{ "proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index" }, { "proName": "BMFBOVESPA:DOL1!", "title": "DOL1!" }, { "proName": "OKX:BTCBRL", "title": "Bitcoin" }, { "proName": "BMFBOVESPA:SMAL11", "title": "smal11" }, { "proName": "BMFBOVESPA:IFIX", "title": "IFIX" }, { "proName": "BMFBOVESPA:PETR4", "title": "PETR4" }],"showSymbolLogo": true, "colorTheme": "dark", "isTransparent": true, "displayMode": "regular", "locale": "br"}</script></div></div>
+    </div>
+
+    <main class="pt-[107px] pb-16 md:pb-24 min-h-screen">
+        <div class="container mx-auto px-4 lg:px-8 py-16 sm:py-20">
+            
+            <div class="max-w-5xl mx-auto text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold text-[#08332a] tracking-tight">Nossas Políticas</h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Transparência e segurança em primeiro lugar. Navegue pelas seções para saber mais.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto md:grid md:grid-cols-12 md:gap-12 items-start">
+                
+                <aside class="md:col-span-4 lg:col-span-3 sticky top-32 z-20">
+                    <div class="md:hidden relative mb-6">
+                        <button id="mobile-tab-button" class="flex items-center justify-between w-full px-4 py-3 bg-white border border-gray-200 rounded-lg shadow-sm text-lg font-semibold text-[#08332a]"><span id="mobile-tab-label">Selecione a Política</span><svg class="w-5 h-5 text-gray-500 transition-transform duration-300" id="mobile-tab-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg></button>
+                        <div id="mobile-tab-menu" class="hidden absolute top-full left-0 mt-2 w-full bg-white border border-gray-200 rounded-lg shadow-xl z-10">
+                            <a href="#portal-privacidade" data-target="portal-privacidade" data-label="Portal de Privacidade" class="tab-link block px-4 py-3 text-gray-700 hover:bg-gray-100">Portal de Privacidade</a>
+                            <a href="#politica-cookies" data-target="politica-cookies" data-label="Política de Cookies" class="tab-link block px-4 py-3 text-gray-700 hover:bg-gray-100">Política de Cookies</a>
+                            <a href="#politica-dados" data-target="politica-dados" data-label="Política de Privacidade e Dados" class="tab-link block px-4 py-3 text-gray-700 hover:bg-gray-100">Política de Privacidade e Dados</a>
+                        </div>
+                    </div>
+                    <nav class="hidden md:flex flex-col space-y-2">
+                        <a href="#portal-privacidade" data-target="portal-privacidade" class="tab-link text-left px-4 py-3 rounded-lg font-semibold transition-all duration-200">Portal de Privacidade</a>
+                        <a href="#politica-cookies" data-target="politica-cookies" class="tab-link text-left px-4 py-3 rounded-lg font-semibold transition-all duration-200">Política de Cookies</a>
+                        <a href="#politica-dados" data-target="politica-dados" class="tab-link text-left px-4 py-3 rounded-lg font-semibold transition-all duration-200">Política de Privacidade e Dados</a>
+                    </nav>
+                </aside>
+
+                <div class="md:col-span-8 lg:col-span-9 bg-white p-6 sm:p-10 rounded-lg shadow-lg border border-gray-200">
+                    
+                    <div id="portal-privacidade" class="content-section">
+    <div class="collapsible-content is-collapsed">
+        <div class="prose max-w-none">
+            <h2>Portal de Privacidade</h2>
+            <p>A Eterna Capital busca atender as dúvidas dos titulares por meio deste Portal de Privacidade, com o objetivo de cumprir com as disposições da LGPD. O formulário está aberto para solucionar problemas em relação à privacidade de seus dados pessoais, sinta-se à vontade para preenchê-lo.</p>
+            <p>Você também pode entrar em contato com o nosso DPO (Encarregado de Proteção de Dados), caso necessite de mais informações, através do e-mail: <a href="mailto:contato@eternacapital.com.br">contato@eternacapital.com.br</a>.</p>
+        </div>
+    </div>
+    <div class="mt-4">
+        <button class="read-more-button text-[#c5a365] font-bold hover:text-[#a58651] transition-colors duration-200 flex items-center gap-2">
+            <span class="button-text">Ver o conteúdo completo</span>
+            <svg class="button-arrow w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path></svg>
+        </button>
+    </div>
+</div>
+
+                    <div id="politica-cookies" class="content-section">
+                        <div class="collapsible-content is-collapsed">
+                            <div class="prose max-w-none">
+                                <h2>Qual o objetivo da Política?</h2>
+                                <p>A Privacidade e a Proteção de Dados são temas de extrema importância para nossa para demonstrar a você, usuário do site, de forma clara e acessível como utilizamos cookies e o papel que eles desempenham.</p>
+                                <h3>O que são Cookies:</h3>
+                                <p>Começaremos a presente Política explicando de forma simplificada o que são Cookies. Cookies são pequenos arquivos baixados no seu computador ou dispositivo móvel para melhorar a sua experiência durante a navegação em um site, lembramos que a imensa maioria dos sites da web os possuem. Esta Política utiliza o termo cookie para qualquer arquivo que recolha informações desta forma, além disso, descrevemos quais informações eles coletam, como as usamos e por que às vezes precisamos armazenar esses cookies.</p>
+                                <h3>Como usamos os cookies:</h3>
+                                <p>Os cookies utilizados no nosso site https://eternacapital.com.br/ têm as seguintes finalidades:</p>
+                                <ul>
+                                    <li>Permitir uma navegação eficiente entre páginas</li>
+                                    <li>Lembrar preferências e melhorar a experiência do usuário</li>
+                                    <li>Garantir que nossas campanhas e entregas de conteúdo sejam mais relevantes para você e seus interesses.</li>
+                                </ul>
+                                <p>Nosso site utiliza as ferramentas analytics mais confiáveis do mercado. Estas ferramentas são métodos de análise confiáveis e seguras para nos ajudar a entender como você usa o website e como podemos melhorar sua experiência de navegação. Esses cookies auxiliam na compreensão de como você está interagindo com nosso site, quanto tempo você passa nele e nas páginas visitadas dentro do domínio.</p>
+                                <p>Também usamos botões e plugins de redes sociais. De forma a permitir que você se conecte com seu Facebook e Linkedin. Para o correto funcionamento, as plataformas implementam cookies em nosso site.</p>
+                                <h3>Os cookies que definimos:</h3>
+                                <ul>
+                                    <li><strong>Cookies de sessão:</strong> Estes não apresentam data de validade e não ficam gravados no disco, quando o site é fechado os cookies são excluídos permanentemente.</li>
+                                    <li><strong>Cookies de preferências do site:</strong> Estes cookies se enquadram como “Cookies permanentes”, ao invés de serem excluídos ao fechar o navegador eles são excluídos por data de validade. Por exemplo, utilizamos o Cookie “GA” de modo que as próximas visitas ao site possam ser relacionadas a você.</li>
+                                </ul>
+                                <h3>Cookies de terceiros:</h3>
+                                <p>Em alguns casos, também nos utilizamos de cookies fornecidos por terceiros confiáveis. A Eterna só mantém relações com empresas que garantem a integridade e segurança dos dados pessoais coletados. A seção a seguir detalha quais cookies de terceiros você pode encontrar no website.</p>
+                                <ul>
+                                    <li>Cookies enviados pelo Google Analytics. Esta é uma das soluções analíticas mais difundidas e confiáveis ​​da web, utilizamos esta ferramenta com o intuito específico de nos ajudar a compreender como você usa o site para podermos melhorar sua experiência.</li>
+                                    <li>Este site também utiliza o Pixel do Facebook para as análises do Facebook Analytics, desta forma podemos fazer a mensuração de interações, elaboração de relatórios, otimização de campanhas de marketing e definições de públicos.</li>
+                                </ul>
+                                <h3>Desativando Cookies:</h3>
+                                <p>Você pode impedir a configuração de cookies ajustando as configurações do seu navegador. Esteja ciente de que a desativação de cookies afetará a funcionalidade deste e de muitos outros sites que você visita.</p>
+                                <h3>Mais Informações:</h3>
+                                <p>A proteção de seus dados pessoais e a sua privacidade são respeitadas em todas as operações da nossa empresa. Estamos comprometidos em proteger seus dados pessoais, sua privacidade e principalmente em garantir a sua segurança.</p>
+                                <p>Esperamos que a Política tenha esclarecido o funcionamento dos cookies deste website para você, no entanto, se ainda estiver procurando por mais informações, você pode nos contatar nos seguintes meios:</p>
+                                <p><strong>E-mail:</strong> <a href="mailto:contato@eternacapital.com.br">contato@eternacapital.com.br</a></p>
+                                <div class="mt-8 pt-6 border-t">
+                                    <h3>Informações do Controlador:</h3>
+                                    <p><strong>ETERNA CAPITAL ASSESSOR DE INVESTIMENTOS LTDA</strong><br>CNPJ: 28.529.362/0001-93<br>Alameda Terracota, n.o 185 – Conjunto. 1.112, 1.113 e 1.114 – Cerâmica – São Caetano do Sul/SP – CEP 09531-190.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button class="read-more-button text-[#c5a365] font-bold hover:text-[#a58651] transition-colors duration-200 flex items-center gap-2">
+                                <span class="button-text">Ver o conteúdo completo</span>
+                                <svg class="button-arrow w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="politica-dados" class="content-section">
+                        <div class="collapsible-content is-collapsed">
+                            <div class="prose max-w-none">
+                                <h2>Política de Privacidade e Proteção de Dados Pessoais</h2>
+                                <h3>APRESENTAÇÃO:</h3>
+                                <p>A Eterna Capital é uma empresa de Assessores de Investimentos devidamente registrada na Comissão de Valores Mobiliários, atuando no mercado financeiro credenciada à XP Inc. Nós oferecemos investimentos de acordo com sua necessidade e perfil. Você terá acesso às mais variadas opções de investimentos do mercado, seja para estruturar uma carteira mais conservadora, buscar opções mais rentáveis ou até mesmo realizar investimentos internacionais.</p>
+                                <p>Para que consigamos alcançar nossos objetivos, a Eterna necessita realizar o tratamento de alguns dados pessoais. Por prezarmos sempre pela transparência de todos os nossos processos, trazemos a presente Política de Privacidade e Proteção de Dados para você entender de maneira descomplicada como cuidamos e tratamos os seus dados pessoais.</p>
+                                <p>Solicitamos que você leia esta Política com atenção, nosso objetivo foi deixá-la acessível e clara para o seu entendimento. Porém, caso reste alguma dúvida, não hesite em questionar o nosso Encarregado pela Proteção de Dados no e-mail: <a href="mailto:privacidade@eternacapital.com.br">privacidade@eternacapital.com.br</a></p>
+                                <h3>OBJETIVO DA POLÍTICA</h3>
+                                <p>A presente Política de Privacidade e Proteção de Dados tem o propósito de demonstrar para você, Titular de dados, de que forma a Eterna Capital se preocupa com a sua privacidade e realiza o tratamento dos seus dados. Objetivamos demonstrar nossos princípios e valores sobre o tema de forma transparente para você.</p>
+                                <p>A Eterna tem a missão de respeitar e resguardar sua privacidade, atendendo a isso, respeitamos todas as legislações aplicáveis no Brasil que versam sobre este tema, em especial a Lei Geral de Proteção de Dados (Lei 13.709), o Marco Civil da Internet (Lei 12.965) e o Código do Consumidor (Lei 8.078).</p>
+                                <p>A partir da presente Política todas as questões envolvendo o tratamento de dados pessoais serão explicadas de maneira facilitada.</p>
+                                <h3>DADOS PESSOAIS E TRATAMENTO DE DADOS</h3>
+                                <p><strong>O que são dados pessoais?</strong> Dado pessoal é toda e qualquer informação relacionada à pessoa física que a torne identificada ou identificável.</p>
+                                <ul>
+                                    <li><strong>Dados pessoais identificados:</strong> São aqueles em que a informação é ligada diretamente à pessoa que os possui, permitindo sua identificação. Como exemplo: o nome completo, o CPF, o RG, a CNH e muitos outros.</li>
+                                    <li><strong>Dados pessoais identificáveis:</strong> Estes dados não permitem chegar diretamente ao reconhecimento da pessoa que os possui, porém dentro de um contexto de informações é possível chegar em sua identificação. Por exemplo: o IP do computador, a profissão, o estado civil, o endereço residencial e muitos outros.</li>
+                                    <li><strong>Tratamento de dados:</strong> Tratamento de Dados se refere a toda e qualquer operação realizada envolvendo os dados pessoais, como exemplo, mas não se limitando a: coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração.</li>
+                                </ul>
+                                <h3>AGENTES DO TRATAMENTO</h3>
+                                <ul>
+                                    <li><strong>Controlador:</strong> Controlador se refere à empresa que realiza o tratamento dos dados pessoais para seu interesse, é ele quem define o que será feito com os dados. Nesta Política o Controlador dos dados somos nós, a ETERNA CAPITAL ASSESSOR DE INVESTIMENTOS LTDA, regularmente inscrita no CNPJ sob o nº 28.529.362/0001-93, com sede na Alameda Terracota, nº 185 – Conjunto. 1.112, 1.113 e 1.114 – Cerâmica – São Caetano do Sul/SP – CEP 09531-190.</li>
+                                    <li><strong>Operadores:</strong> Operador se refere ao terceiro que realiza o tratamento dos dados pessoais em nome do Controlador. Nós, da Eterna Capital, nos relacionamos com empresas que garantem a aplicação de medidas necessárias à proteção dos dados pessoais tratados. Além disso, estabelecemos regras de privacidade para ambas as partes durante a relação comercial.</li>
+                                </ul>
+                                <p>Ademais, para realizar nossos serviços de Assessoria de investimentos, realizamos o tratamento de dados pessoais na figura de Operador. Nestes casos estamos comprometidos a realizar o tratamento de dados pessoais segundo as instruções fornecidas pelo Controlador (XP Investimentos), garantindo segurança e privacidade para os clientes ao manter os dados pessoais protegidos de acessos não autorizados, divulgação, destruição, perda acidental ou qualquer tipo de violação de dados pessoais. Assim como mantemos registros das operações de tratamentos, de forma a cumprir com as Políticas de Segurança da Informação, Política de Privacidade e Código de Conduta oferecidos pela XP Investimentos.</p>
+                                <ul>
+                                    <li><strong>Titulares:</strong> Titular é a pessoa física a qual os dados pessoais se referem. Neste caso, você.</li>
+                                    <li><strong>Encarregado:</strong> O Encarregado dos dados, também chamado de DPO ou Data Protection Officer, é o responsável dentro da empresa por averiguar a aplicação da legislação e garantir a privacidade e segurança das informações. Ele é também o responsável por realizar os atendimentos às solicitações dos Titulares, além de servir como canal de comunicação com a Autoridade Nacional de Proteção de Dados (ANPD).</li>
+                                </ul>
+                                <h3>FINALIDADE DO TRATAMENTO DE DADOS</h3>
+                                <ol>
+                                    <li><strong>Contato com cliente:</strong> Para atendermos nossos clientes necessitamos utilizar dados pessoais para contatá-los.
+                                        <ul>
+                                            <li><strong>Dia a dia:</strong> Nosso serviço prestado pela Eterna é em conjunto com o dia a dia do cliente, desta forma nossa comunicação é constante e direta.</li>
+                                            <li><strong>Tomada de decisão:</strong> Através dos nossos serviços de Assessoria de Investimentos auxiliamos nossos clientes para as melhores decisões para seus investimentos.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Envio de conteúdo:</strong> A Eterna divulga conteúdo relevante para investidores por meio de nossas plataformas de Blog, Instagram, Youtube, E-mail e Telegram. Para realizarmos o envio destes conteúdos precisamos tratar dados pessoais dos interessados.</li>
+                                    <li><strong>Contato com possíveis clientes e interessados:</strong> A Eterna pode contatar as pessoas que participaram de nossas campanhas ou eventos, assim como, indicações que surgirem destes.</li>
+                                    <li><strong>Processo Seletivo:</strong> A Eterna realiza processo seletivo para selecionar os melhores candidatos com intuito de agregar nossa equipe.</li>
+                                    <li><strong>Realização de eventos:</strong> Utilizamos dados pessoais para contatar os participantes dos eventos e manter relacionamento comercial de acordo com seu interesse.</li>
+                                </ol>
+                                <h3>DADOS TRATADOS PELA ETERNA</h3>
+                                <p>Para realizarmos nossos serviços de Assessoria de Investimentos não utilizamos dados pessoais na posição de Controlador, todos os dados são coletados e tratados a partir de ambiente seguro, disponibilizado pela XP Investimentos. Nesta posição, somente os dados que você, cliente XP, disponibiliza receberão tratamento. Os dados que chegam até nós são apenas os estritamente necessários para realizarmos as operações de investimentos que você solicitar, portanto, somente informações de cadastro e informações necessárias para as transições serão acessadas, de forma a preservar sua privacidade.</p>
+                                <ul>
+                                    <li><strong>Para contato com o cliente:</strong> Para manter a relação próxima com nossos clientes e melhor atendê-los, necessitamos utilizar: Nome; E-mail; Número de telefone.</li>
+                                    <li><strong>Para realizar o Atendimento no Site Oficial</strong> precisamos tratar os seguintes dados pessoais: Nome; E-mail; Telefone.</li>
+                                    <li>Objetivando a <strong>divulgação de nossos conteúdos e serviços</strong> utilizamos dados pessoais para realizar os envios. Os dados tratados são: Nome; Telefone; E-mail; Dados que você inseriu nas campanhas para receber o conteúdo mais adequado.</li>
+                                    <li><strong>Para divulgação de nossos conteúdos e serviços:</strong> Nome; E-mail; Telefone.</li>
+                                    <li><strong>Para seleção de colaboradores e estagiários</strong> em processos seletivos para integrarem a equipe Eterna Capital, utilizamos: Nome completo; Endereço de e-mail; Telefone; Currículo.</li>
+                                </ul>
+                                <h3>FORMA DE COLETA</h3>
+                                <ul>
+                                    <li>Através do próprio cliente</li>
+                                    <li>Campanhas de marketing</li>
+                                    <li>Dados manifestadamente públicos</li>
+                                    <li>Formulário de Contato no site</li>
+                                    <li>Inscrição nos nossos downloads de conteúdos</li>
+                                    <li>Inscrição no processo seletivo</li>
+                                </ul>
+                                <h3>BASES LEGAIS</h3>
+                                <p>Bases Legais são as hipóteses que permitem o tratamento de dados pessoais por parte das organizações. A Eterna Capital só realiza o tratamento de dados pessoais devidamente amparados pelas Bases Legais, de acordo com o artigo 7º da Lei Geral de Proteção de Dados. As Bases Legais utilizadas pela empresa são:</p>
+                                <ul>
+                                    <li>Contrato – Artigo 7º Inciso V</li>
+                                    <li>Consentimento – Artigo 7º Inciso I</li>
+                                    <li>Legítimo Interesse do Controlador – Artigo 7º Inciso IX</li>
+                                    <li>Cumprimento de Obrigação Legal – Artigo 7º, Inciso II</li>
+                                    <li>Exercício regular de direitos – Artigo 7º, Inciso VI</li>
+                                </ul>
+                                <h3>PRINCÍPIOS</h3>
+                                <p>A Eterna Capital se compromete em seguir os princípios da Lei Geral de Proteção de Dados. Obedecemos às diretrizes do “Privacy by Design” o que significa que todos os nossos serviços são elaborados levando em consideração a Privacidade dos usuários em todas as etapas, e a “Privacy by Default” de forma que a configuração mais segura para os usuários é sempre aplicada por padrão.</p>
+                                <p>Seguimos os princípios da LGPD em todo o tratamento de dados. Com o intuito de deixar você mais ciente destes valores e para que você possa certificar-se de seu cumprimento, trazemos eles nesta Política de Privacidade e Proteção de Dados.</p>
+                                <p>Os princípios são:</p>
+                                <ul>
+                                    <li>Finalidade</li>
+                                    <li>Necessidade</li>
+                                    <li>Adequação</li>
+                                    <li>Segurança</li>
+                                    <li>Prevenção</li>
+                                    <li>Responsabilização e Prestação de contas</li>
+                                    <li>Transparência</li>
+                                    <li>Livre acesso</li>
+                                    <li>Qualidade</li>
+                                    <li>Não discriminação</li>
+                                </ul>
+                                <h3>COOKIES</h3>
+                                <p><strong>O que são cookies:</strong> Cookies são pequenos arquivos baixados no seu computador ou dispositivo móvel para melhorar a sua experiência quando você acessa um site. Utilizamos o termo cookie para qualquer arquivo que recolha informação desta forma.</p>
+                                <p><strong>Porque usar:</strong> Utilizamos Cookies para permitir uma navegação eficiente entre nossas páginas web, lembrar preferências e melhorar a experiência do usuário. Eles também podem ajudar a garantir que os anúncios que você vê online sejam mais relevantes para você e seus interesses.</p>
+                                <p><strong>Quais usamos:</strong> Além dos Cookies estritamente necessários para o funcionamento de nossas páginas também utilizamos ferramentas analytics, que são métodos de análise confiáveis e seguras para nos ajudar a entender como você usa o website e como podemos melhorar sua experiência de navegação</p>
+                                <p>Nós da Eterna elaboramos uma Política específica sobre o uso de Cookies para você entender de maneira completa a utilização dessa ferramenta.</p>
+                                <p>Você pode acessá-la através do link: <a href="https://eternacapital.com.br/politica-de-cookies/" target="_blank" rel="noopener noreferrer">https://eternacapital.com.br/politica-de-cookies/</a></p>
+                                <h3>SEGURANÇA DA INFORMAÇÃO</h3>
+                                <p>A Eterna Capital se responsabiliza pela manutenção de medidas de segurança, técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou qualquer forma de tratamento inadequado ou ilícito.</p>
+                                <p>Nós realizamos a manutenção regular de todos os softwares, legalizados e atualizados, por meio de aplicação regular dos patches de segurança.</p>
+                                <p>Além de seguirmos todas as diretrizes das Políticas de Segurança da XP Investimentos, ainda possuímos regulamentos internos de Boas Práticas para todos os envolvidos no tratamento de dados.</p>
+                                <p>Todos os nossos colaboradores, sócios e funcionários receberam Treinamento frente à Lei Geral de Proteção de Dados (13.709/18).</p>
+                                <p>Além disso, há restrição de acesso das informações de acordo com cada setor da empresa, onde somente os responsáveis pelas atividades obtêm autoridade para manuseá-las.</p>
+                                <p>Todos os computadores e redes utilizadas possuem configuração de antivírus e firewall.</p>
+                                <h3>COMPARTILHAMENTO DE DADOS</h3>
+                                <p>Durante o tratamento de dados pessoais realizado pela Eterna Capital os dados podem ser compartilhados ou transferidos a terceiros, no Brasil ou no exterior, com o objetivo de cumprir adequadamente as finalidades enumeradas nesta política.</p>
+                                <p>Os dados serão compartilhados somente nas seguintes hipóteses:</p>
+                                <ul>
+                                    <li>Com os sistemas de gestão de relacionamento com o cliente que utilizamos</li>
+                                    <li>Com os provedores de armazenamento em nuvem contratados pela empresa</li>
+                                    <li>Com as ferramentas de análise para desempenho de nosso Blog, Site e Canais de comunicação, conforme detalhado em nossa política de cookies</li>
+                                    <li>Com as ferramentas de marketing utilizadas para envio de conteúdo</li>
+                                    <li>Com as demais empresas do grupo Eterna Capital.</li>
+                                </ul>
+                                <p>Em todas as circunstâncias a Eterna Capital se compromete em compartilhar somente os dados pessoais estritamente necessários para o cumprimento da finalidade específica.</p>
+                                <p>Para mais informações sobre quais empresas estão nas hipóteses acima você pode entrar em contato solicitando esclarecimentos no e-mail: <a href="mailto:privacidade@eternacapital.com.br">privacidade@eternacapital.com.br</a></p>
+                                <p>A Eterna Capital, garante que, sob nenhuma hipótese, comercializa as informações dos Titulares.</p>
+                                <p>Além disso, podemos compartilhar os dados pessoais dos Titulares para as autoridades constituídas, em estrito cumprimento da Lei.</p>
+                                <h3>DIREITO DOS TITULARES E ACESSO AO PORTAL DE PRIVACIDADE</h3>
+                                <p>Com o objetivo de deixar você, Titular de dados, mais ciente de seus direitos como cidadão, elencamos abaixo todos os Direitos dos Titulares trazidos pela LGPD.</p>
+                                <ol>
+                                    <li><strong>Confirmação da existência de tratamento de dados pessoais:</strong> Você tem o direito de confirmar com os Controladores se eles possuem seus dados pessoais. Se você é um cliente da Eterna isso significa que realizamos o tratamento de seus dados.</li>
+                                    <li><strong>Acesso aos dados pessoais:</strong> Você pode solicitar ao Controlador que ele informe e forneça os dados pessoais que possui em relação a você.</li>
+                                    <li><strong>Correção de dados pessoais incompletos, inexatos ou desatualizados:</strong> Você tem o direito de solicitar a correção ou complementação de seus dados frente ao Controlador.</li>
+                                    <li><strong>Anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com a LGPD:</strong> Caso qualquer dado pessoal seja tratado de forma desnecessária, em excesso para a finalidade a que se destina ou em desconformidade com a LGPD, você pode solicitar que o Controlador anonimize, bloqueie ou elimine esses dados.</li>
+                                    <li><strong>Eliminação dos dados pessoais tratados com o consentimento:</strong> Caso você tenha dado o consentimento para tratamento dos seus dados pessoais, você poderá solicitar a eliminação desses dados.</li>
+                                    <li><strong>Informação das organizações com as quais o Controlador compartilhou os dados pessoais:</strong> Você pode solicitar que o Controlador informe com quais empresas houve compartilhamento de seus dados pessoais.</li>
+                                    <li><strong>Informação sobre a possibilidade de não fornecer consentimento e sobre as consequências da negativa:</strong> Se você questionar sobre ter disponibilizado seu consentimento para tratamento de dados específico, você também terá o direito de receber informações sobre as consequências de não concordar com os termos da empresa.</li>
+                                    <li><strong>Revogação do consentimento:</strong> Caso você tenha dado o seu consentimento para tratamento dos seus dados pessoais, você pode solicitar a revogação desta autorização.</li>
+                                    <li><strong>Decisões automatizadas:</strong> Você pode solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado de dados pessoais que afetem seus interesses.</li>
+                                    <li><strong>Portabilidade:</strong> Você pode solicitar a portabilidade dos seus dados pessoais a outro prestador de serviços.</li>
+                                    <li><strong>Suporte a ANPD:</strong> Você tem o direito de receber suporte do Controlador caso queira realizar uma reclamação à Autoridade Nacional de Proteção de Dados.</li>
+                                    <li><strong>Concordância com oposição ao tratamento, caso irregular:</strong> Você tem o Direito de receber concordância por parte do Controlador em se abster de continuar o tratamento de dados caso este seja irregular.</li>
+                                </ol>
+                                <p>Você, como titular de dados pessoais, pode exercer seus direitos frente a Eterna Capital. Nós nos comprometemos a atender a todos os pedidos, desta forma, disponibilizamos plataforma específica para atender suas solicitações através do nosso Portal de Privacidade.</p>
+                                <p>Além disso, caso você prefira, você pode solicitar diretamente no e-mail do nosso DPO: <a href="mailto:privacidade@eternacapital.com.br">privacidade@eternacapital.com.br</a></p>
+                                <h3>MODIFICAÇÃO DA POLÍTICA</h3>
+                                <p>Todos os dados pessoais tratados pela Eterna Capital estarão de acordo com esta Política de Privacidade e Proteção de Dados. A empresa se reserva no direito de alterar total ou parcialmente a presente Política a qualquer tempo, inserindo a última data de atualização conforme indicado abaixo.</p>
+                                <p>Pedimos que você consulte a nossa Política de Privacidade para verificar eventuais alterações. Ainda assim, atualizaremos nossos clientes e contatos quando tivermos alterações importantes, por meio de e-mail.</p>
+                                <h3>ENCARREGADO E CERTIFICAÇÕES</h3>
+                                <p>Nosso Encarregado pela Proteção de Dados pode ser contatado a qualquer momento no e-mail: <a href="mailto:privacidade@eternacapital.com.br">privacidade@eternacapital.com.br</a></p>
+                                <p>Além disso, você também pode solicitar atendimento de forma presencial na nossa sede, na Alameda Terracota, nº 185 – Conjunto. 1.112, 1.113 e 1.114 – Cerâmica – São Caetano do Sul/SP – CEP 09531-190.</p>
+                                <p>Nosso DPO possui as certificações:</p>
+                                <ul>
+                                    <li>EXIN Privacy and Data Protection Essentials</li>
+                                    <li>EXIN Information Security Foundation based on ISO/IEC 27001</li>
+                                    <li>EXIN Data and Privacy Protection Foundation</li>
+                                    <li>EXIN EXIN Privacy and Data Protection Practitioner</li>
+                                    <li>EXIN Data Protection Officer</li>
+                                </ul>
+                                <p>Seu perfil com as certificações está disponível no Link: <a href="https://app.exeed.pro/holder/profile/54851" target="_blank" rel="noopener noreferrer">https://app.exeed.pro/holder/profile/54851</a></p>
+                                <h3>CONTATO</h3>
+                                <p>Se após a leitura desta Política de Privacidade e Proteção de Dados você ainda tiver qualquer dúvida você pode entrar em contato das seguintes maneiras:</p>
+                                <ol>
+                                    <li>Seção “Portal de Privacidade” do nosso site oficial, através do link: <a href="https://eternacapital.com.br/portal-de-privacidade/" target="_blank" rel="noopener noreferrer">https://eternacapital.com.br/portal-de-privacidade/</a></li>
+                                    <li>Pelo e-mail de nosso Encarregado (DPO): <a href="mailto:privacidade@eternacapital.com.br">privacidade@eternacapital.com.br</a></li>
+                                </ol>
+                                <p>Estamos sempre à disposição para esclarecer suas dúvidas!</p>
+                                <h3>REVISÃO E PUBLICAÇÃO</h3>
+                                <p>Esta Política será revisada no prazo máximo de 1 ano, mas poderá ser revisada/alterada a qualquer momento se assim necessário, obedecendo o procedimento de aprovações da empresa.</p>
+                                <p>A versão atualizada desta política será devidamente disponibilizada sempre que alterada.</p>
+                                <p><em>Data de publicação desta Política de Privacidade e Proteção de Dados no site: Maio de 2023.</em></p>
+                                <p><em>Data de revisão e atualização desta Política de Privacidade e Proteção de Dados: Junho de 2024.</em></p>
+                                <p><em>Data de revisão e atualização desta Política de Privacidade e Proteção de Dados: Março de 2025.</em></p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button class="read-more-button text-[#c5a365] font-bold hover:text-[#a58651] transition-colors duration-200 flex items-center gap-2">
+                                <span class="button-text">Ver o conteúdo completo</span>
+                                <svg class="button-arrow w-4 h-4 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background-color: #08332a;" class="text-white">
+        <div class="container mx-auto px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="flex items-center space-x-4">
+                        <img src="/logo.png" alt="Logo Eterna Capital" class="h-12">
+                    </div>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://br.linkedin.com/company/eternacapitaloficial" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#c5a365] transition-colors" aria-label="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg></a>
+                        <a href="https://www.facebook.com/eternacapitaloficial" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#c5a365] transition-colors" aria-label="Facebook"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a>
+                        <a href="https://www.instagram.com/eternacapitaloficial" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#c5a365] transition-colors" aria-label="Instagram"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.459.717-2.126 1.384S.935 3.356.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.784.718 1.459 1.384 2.126.667.666 1.342 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.784-.305-1.459-.718-2.126-1.384.666-.667-1.079-1.342-1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.305-.784-.718-1.459-1.384-2.126C21.319-1.342-20.644.93-19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.056 1.17-.249 1.805-.413 2.227-.217.562-.477.96-.896 1.381-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.585-.015-4.85-.074c-1.17-.056-1.805-.249-2.227-.413-.562-.217-.96-.477-1.381-.896-.419-.42-.679-.819-.896-1.381-.165-.423-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.015-3.585.07-4.85c.055-1.17.248-1.805.413-2.227.217-.562.477.96.896-1.381.42-.42.82-.679-1.381-.896.423-.165-1.057-.36-2.227-.413-1.266-.057-1.646-.07-4.85-.07zM12-5.838c-3.403-0-6.162-2.759-6.162-6.162s2.759-6.162-6.162-6.162-6.162 2.759-6.162 6.162 2.759 6.162 6.162 6.162zM12-16c-2.209-0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a>
+                        <a href="https://www.youtube.com/@eternacapital" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#c5a365] transition-colors" aria-label="YouTube"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></a>
+                        <a href="https://open.spotify.com/show/73ONwoNrQtzGhzx8NIKts5?si=093f0701aa2e4212" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#c5a365] transition-colors" aria-label="Spotify"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.823 16.949c-.225.352-.675.465-1.028.24-2.61-1.624-5.865-1.98-9.842-1.087-.435.1-.862-.15-.962-.585-.1-.435.15-.862.585-.962 4.335-.99 7.89-0.585 10.74 1.14.352.225.465.675.24 1.028zm1.32-3.134c-.277.435-.84.577-1.29.3-3.15-1.95-7.92-2.4-11.4-1.32-.487.15-.99-.12-1.14-.607-.15-.488.12-.99.608-1.14 3.84-1.17 8.94-.66 12.45 1.5.435.277.577.84.3 1.29-.015.015-.015.015 0 .012zm.12-3.264C15.3 8.54 9.84 8.34 6.75 9.345c-.525.165-1.05-.15-1.215-.675-.165-.525.15-1.05.675-1.215 3.45-1.08 9.525-.87 13.05 1.29.51.315.69.93.375 1.44-.315.51-.93.69-1.44.375z"></path></svg></a>
+                    </div>
+                </div>
+                <div class="text-center md:text-left"><h3 class="text-lg font-bold tracking-wider uppercase" style="color: #c5a365;">Onde Estamos</h3><div class="mt-4 space-y-2 text-gray-300"><p>Alameda Terracota, n.o 185</p><p>Conjunto. 1.112, 1.113 e 1.114</p><p>Cerâmica – São Caetano do Sul/SP</p><p>CEP 09531-190</p></div></div>
+                <div class="text-center md:text-left"><h3 class="text-lg font-bold tracking-wider uppercase" style="color: #c5a365;">Fale Conosco</h3><div class="mt-4 space-y-2 text-gray-300"><p>Tel: (11) 4118-9000</p><p>E-mail: <a href="mailto:contato@eternacapital.com.br" class="hover:text-[#c5a365] transition-colors">contato@eternacapital.com.br</a></p></div></div>
+                <div class="text-center md:text-left"><h3 class="text-lg font-bold tracking-wider uppercase" style="color: #c5a365;">Links</h3><div class="mt-4 space-y-2 text-gray-300 flex flex-col items-center md:items-start"><a href="/links/#portal-privacidade" class="hover:text-[#c5a365] transition-colors">Portal de Privacidade</a><a href="/links/#politica-cookies" class="hover:text-[#c5a365] transition-colors">Política de Cookies</a><a href="/links/#politica-dados" class="hover:text-[#c5a365] transition-colors">Política de Privacidade e Proteção de Dados Pessoais</a></div></div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700 text-xs text-gray-400 text-justify">
+                <div id="disclaimer-content" class="disclaimer-text">
+                    <p>A ETERNA CAPITAL ASSESSOR DE INVESTIMENTOS LTDA, inscrita sob o CNPJ: 28.529.362/0001-93 é uma empresa de Assessoria de Investimento devidamente registrada na Comissão de Valores Mobiliários na forma da Resolução CVM 178/23 (“Sociedade”), que mantém contrato de distribuição de produtos financeiros com a XP Investimentos Corretora de Câmbio, Títulos e Valores Mobiliários S.A. (“XP”) e pode, por conta e ordem dos seus clientes, operar no mercado de capitais segundo a legislação vigente. Na forma da legislação da CVM, o Assessor de Investimento não pode administrar ou gerir o patrimônio de investidores. O investimento em ações é um investimento de risco e rentabilidade passada não é garantia de rentabilidade futura. Na realização de operações com derivativos existe a possibilidade de perdas superiores aos valores investidos, podendo resultar em significativas perdas patrimoniais A Sociedade poderá exercer atividades complementares relacionadas aos mercados financeiro, securitário, de previdência e capitalização, desde que não conflitem com a atividade de assessoria de investimentos, podendo ser realizada por meio da pessoa jurídica acima descrita ou por meio de pessoa jurídica terceira. Todas as atividades são prestadas mantendo a devida segregação e em cumprimento ao quanto previsto nas regras da CVM ou de outros órgãos reguladores e autorreguladores. Para informações e dúvidas sobre produtos, contate seu assessor de investimentos. Para reclamações, contate a Ouvidoria da XP pelo telefone 0800 722 3730.</p>
+                </div>
+                <button id="toggle-disclaimer" class="md:hidden w-full text-left font-semibold text-[#c5a365] mt-4 py-2 flex justify-between items-center">
+                    <span>Aviso Legal Completo</span>
+                    <svg id="disclaimer-arrow" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path></svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Lógica do Menu Mobile e Disclaimer
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+            if (mobileMenuButton) { mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('is-open'); menuIconOpen.classList.toggle('hidden'); menuIconClose.classList.toggle('hidden'); }); }
+            const disclaimerToggle = document.getElementById('toggle-disclaimer');
+            const disclaimerContent = document.getElementById('disclaimer-content');
+            const disclaimerArrow = document.getElementById('disclaimer-arrow');
+            if (disclaimerToggle) { disclaimerToggle.addEventListener('click', () => { disclaimerContent.classList.toggle('is-open'); disclaimerArrow.classList.toggle('is-open'); }); }
+            
+            // --- LÓGICA RESPONSIVA PARA AS ABAS (TABS) ---
+            const tabLinks = document.querySelectorAll('.tab-link');
+            const contentSections = document.querySelectorAll('.content-section');
+            const mobileTabButton = document.getElementById('mobile-tab-button');
+            const mobileTabLabel = document.getElementById('mobile-tab-label');
+            const mobileTabMenu = document.getElementById('mobile-tab-menu');
+            const mobileTabArrow = document.getElementById('mobile-tab-arrow');
+            const activeLinkClasses = 'bg-[#c5a365] text-[#08332a]'.split(' ');
+            const inactiveLinkClasses = 'text-gray-700 hover:bg-gray-200'.split(' ');
+
+            function showContent(targetId, targetLabel) {
+                contentSections.forEach(section => { section.style.display = 'none'; });
+                tabLinks.forEach(link => { link.classList.remove(...activeLinkClasses); link.classList.add(...inactiveLinkClasses); });
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) { targetSection.style.display = 'block'; }
+                const activeLinks = document.querySelectorAll(`[data-target="${targetId}"]`);
+                activeLinks.forEach(link => { link.classList.remove(...inactiveLinkClasses); link.classList.add(...activeLinkClasses); });
+                if (targetLabel) { mobileTabLabel.textContent = targetLabel; }
+            }
+
+            tabLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.dataset.target;
+                    const targetLabel = link.dataset.label;
+                    history.pushState(null, null, `#${targetId}`);
+                    showContent(targetId, targetLabel);
+                    if (!mobileTabMenu.classList.contains('hidden')) { mobileTabMenu.classList.add('hidden'); mobileTabArrow.classList.remove('rotate-180'); }
+                });
+            });
+
+            if (mobileTabButton) {
+                mobileTabButton.addEventListener('click', () => {
+                    mobileTabMenu.classList.toggle('hidden');
+                    mobileTabArrow.classList.toggle('rotate-180');
+                });
+            }
+            
+            const initialHash = window.location.hash.substring(1);
+            let initialTarget = 'portal-privacidade', initialLabel = 'Portal de Privacidade';
+            if (initialHash) {
+                const initialLink = document.querySelector(`.tab-link[data-target="${initialHash}"]`);
+                if (initialLink) { initialTarget = initialLink.dataset.target; initialLabel = initialLink.dataset.label; }
+            }
+            showContent(initialTarget, initialLabel);
+
+            // --- LÓGICA PARA EXPANDIR/RECOLHER CONTEÚDO ---
+            const readMoreButtons = document.querySelectorAll('.read-more-button');
+
+            readMoreButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const contentWrapper = button.parentElement.previousElementSibling;
+                    const buttonText = button.querySelector('.button-text');
+                    const buttonArrow = button.querySelector('.button-arrow');
+
+                    contentWrapper.classList.toggle('is-collapsed');
+
+                    if (contentWrapper.classList.contains('is-collapsed')) {
+                        buttonText.textContent = 'Ver o conteúdo completo';
+                        buttonArrow.classList.remove('rotate-180');
+                        contentWrapper.style.maxHeight = '28rem'; // Volta para a altura limitada
+                    } else {
+                        // Remove a altura máxima para expandir completamente
+                        contentWrapper.style.maxHeight = contentWrapper.scrollHeight + 'px';
+                        buttonText.textContent = 'Recolher conteúdo';
+                        buttonArrow.classList.add('rotate-180');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
